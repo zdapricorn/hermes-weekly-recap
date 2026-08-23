@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Market Recap &#8211; 17&#8211;23 Aug 2026</title>
+<!-- fp:236fd4 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background: #0a0a0f;
+    color: #e8e8f0;
+    font-family: 'Commissioner', -apple-system, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #0f0f1a 0%, #0a0a0f 100%);
+    border-radius: 24px;
+    padding: 40px 30px;
+    border: 1px solid #1e1e30;
+}
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #1e1e30;
+}
+.header h1 {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #a78bfa, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+}
+.header .subtitle {
+    color: #8888aa;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+.header .date-badge {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 6px 18px;
+    background: linear-gradient(135deg, #1e1e30, #2a2a40);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #c4b5fd;
+}
+.section {
+    margin-bottom: 36px;
+}
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #a78bfa;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.section-title .icon { font-size: 20px; }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+th {
+    text-align: left;
+    padding: 10px 8px;
+    font-weight: 600;
+    color: #8888aa;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    border-bottom: 1px solid #1e1e30;
+}
+td {
+    padding: 9px 8px;
+    border-bottom: 1px solid #141420;
+}
+td.name { font-weight: 600; color: #d0d0e0; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 400; }
+.cat-label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+.cat-equity { background: #1e3a5f; color: #60a5fa; }
+.cat-fx { background: #1e3a2f; color: #34d399; }
+.cat-commodity { background: #3a2a1e; color: #fb923c; }
+.cat-bond { background: #3a1e2a; color: #f472b6; }
+.wl-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+@media (max-width: 600px) {
+    .wl-grid { grid-template-columns: 1fr; }
+}
+.wl-card {
+    background: #12121e;
+    border-radius: 16px;
+    padding: 16px;
+    border: 1px solid #1e1e30;
+}
+.wl-card h3 {
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+.wl-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #141420;
+}
+.wl-item:last-child { border-bottom: none; }
+.wl-rank {
+    width: 22px;
+    height: 22px;
+    background: #1e1e30;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #8888aa;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+.wl-name { flex: 1; font-weight: 500; font-size: 13px; }
+.wl-val { font-weight: 700; font-size: 13px; }
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.news-item {
+    background: #12121e;
+    border-radius: 12px;
+    padding: 14px 16px;
+    border: 1px solid #1e1e30;
+    transition: border-color 0.2s;
+}
+.news-item:hover { border-color: #a78bfa; }
+.news-day {
+    font-size: 11px;
+    font-weight: 700;
+    color: #6366f1;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.news-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #e0e0f0;
+    margin-bottom: 2px;
+}
+.news-source {
+    font-size: 11px;
+    color: #6666aa;
+}
+.crypto-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+@media (max-width: 500px) {
+    .crypto-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.crypto-card {
+    background: #12121e;
+    border-radius: 14px;
+    padding: 14px;
+    border: 1px solid #1e1e30;
+    text-align: center;
+}
+.crypto-sym {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+.crypto-price {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+.crypto-chg {
+    font-size: 12px;
+    font-weight: 600;
+}
+.crypto-range {
+    font-size: 10px;
+    color: #6666aa;
+    margin-top: 4px;
+}
+.footer {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #1e1e30;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #555577;
+}
+.footer strong { color: #8888aa; }
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-left: 20px;
+    border-left: 2px solid #1e1e30;
+}
+.tl-item {
+    position: relative;
+    padding: 6px 0 6px 16px;
+    font-size: 13px;
+}
+.tl-item::before {
+    content: '';
+    position: absolute;
+    left: -22px;
+    top: 13px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #6366f1;
+}
+.tl-day {
+    font-weight: 700;
+    color: #a78bfa;
+    margin-right: 8px;
+}
+.category-tabs {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HEADER -->
+<div class="header">
+    <h1>Weekly Market Recap</h1>
+    <div class="subtitle">TONG KET THI TRUONG</div>
+    <div class="date-badge">17 &#8211; 23/08/2026</div>
+</div>
+
+<!-- CRYPTO SNAPSHOT -->
+<div class="section">
+    <div class="section-title"><span class="icon">&#x1f4b0;</span> Crypto Snapshot (24h)</div>
+    <div class="crypto-grid">
+        <div class="crypto-card">
+            <div class="crypto-sym" style="color:#fb7185">BTC</div>
+            <div class="crypto-price">$77,080.57</div>
+            <div class="crypto-chg" style="color:#fb7185">&#9660; -1.72%</div>
+            <div class="crypto-range">H:78828.15 &middot; L:76500.0</div>
+            <div class="crypto-range">Vol: 1.32B</div>
+        </div>
+        <div class="crypto-card">
+            <div class="crypto-sym" style="color:#fb7185">ETH</div>
+            <div class="crypto-price">$2,417.31</div>
+            <div class="crypto-chg" style="color:#fb7185">&#9660; -3.84%</div>
+            <div class="crypto-range">H:2529.99 &middot; L:2385.0</div>
+            <div class="crypto-range">Vol: 1.08B</div>
+        </div>
+        <div class="crypto-card">
+            <div class="crypto-sym" style="color:#fb7185">XRP</div>
+            <div class="crypto-price">$1.49</div>
+            <div class="crypto-chg" style="color:#fb7185">&#9660; -4.24%</div>
+            <div class="crypto-range">H:1.7 &middot; L:1.378</div>
+            <div class="crypto-range">Vol: 820M</div>
+        </div>
+        <div class="crypto-card">
+            <div class="crypto-sym" style="color:#fb7185">SOL</div>
+            <div class="crypto-price">$94.94</div>
+            <div class="crypto-chg" style="color:#fb7185">&#9660; -0.61%</div>
+            <div class="crypto-range">H:102.74 &middot; L:87.72</div>
+            <div class="crypto-range">Vol: 693M</div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title"><span class="icon">&#x1f4c8;</span> Equity Indices &#8211; WoW Comparison</div>
+    <div class="category-tabs">
+        <span class="cat-label cat-equity">EQUITIES</span>
+        <span class="cat-label cat-fx">FOREX</span>
+        <span class="cat-label cat-commodity">COMMODITIES</span>
+        <span class="cat-label cat-bond">BONDS</span>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th class="num">Dau Tuan</th>
+                <th class="num">Cuoi Tuan</th>
+                <th class="num">WoW</th>
+                <th class="num">Daily</th>
+            </tr>
+        </thead>
+        <tbody>
+<tr>
+    <td class="name">S&P 500</td>
+    <td class="num">7,753.46</td>
+    <td class="num">7,674.37</td>
+    <td class="num" style="color:#fb7185">-1.02%</td>
+    <td class="num" style="color:#4ade80">+0.43%</td>
+</tr>
+<tr>
+    <td class="name">DJIA</td>
+    <td class="num">53,973</td>
+    <td class="num">53,277</td>
+    <td class="num" style="color:#fb7185">-1.29%</td>
+    <td class="num" style="color:#4ade80">+0.98%</td>
+</tr>
+<tr>
+    <td class="name">Nasdaq</td>
+    <td class="num">26,606</td>
+    <td class="num">26,180</td>
+    <td class="num" style="color:#fb7185">-1.60%</td>
+    <td class="num" style="color:#4ade80">+0.43%</td>
+</tr>
+<tr>
+    <td class="name">VIX</td>
+    <td class="num">15.46</td>
+    <td class="num">15.13</td>
+    <td class="num" style="color:#fb7185">-2.13%</td>
+    <td class="num" style="color:#fb7185">-5.50%</td>
+</tr>
+<tr>
+    <td class="name">STOXX 600</td>
+    <td class="num">660.45</td>
+    <td class="num">654.18</td>
+    <td class="num" style="color:#fb7185">-0.95%</td>
+    <td class="num" style="color:#4ade80">+0.59%</td>
+</tr>
+<tr>
+    <td class="name">DAX</td>
+    <td class="num">26,323</td>
+    <td class="num">26,137</td>
+    <td class="num" style="color:#fb7185">-0.71%</td>
+    <td class="num" style="color:#4ade80">+0.59%</td>
+</tr>
+<tr>
+    <td class="name">CAC 40</td>
+    <td class="num">8,726.14</td>
+    <td class="num">8,484.43</td>
+    <td class="num" style="color:#fb7185">-2.77%</td>
+    <td class="num" style="color:#4ade80">+0.37%</td>
+</tr>
+<tr>
+    <td class="name">FTSE 100</td>
+    <td class="num">10,862</td>
+    <td class="num">10,817</td>
+    <td class="num" style="color:#fb7185">-0.42%</td>
+    <td class="num" style="color:#4ade80">+0.64%</td>
+</tr>
+<tr>
+    <td class="name">Nikkei 225</td>
+    <td class="num">65,610</td>
+    <td class="num">66,016</td>
+    <td class="num" style="color:#4ade80">+0.62%</td>
+    <td class="num" style="color:#fb7185">-0.30%</td>
+</tr>
+<tr>
+    <td class="name">Hang Seng</td>
+    <td class="num">25,937</td>
+    <td class="num">26,009</td>
+    <td class="num" style="color:#4ade80">+0.28%</td>
+    <td class="num" style="color:#4ade80">+1.21%</td>
+</tr>
+<tr>
+    <td class="name">Shanghai</td>
+    <td class="num">3,966.68</td>
+    <td class="num">3,905.20</td>
+    <td class="num" style="color:#fb7185">-1.55%</td>
+    <td class="num" style="color:#4ade80">+0.04%</td>
+</tr>
+<tr>
+    <td class="name">Nifty 50</td>
+    <td class="num">24,584</td>
+    <td class="num">24,252</td>
+    <td class="num" style="color:#fb7185">-1.35%</td>
+    <td class="num" style="color:#4ade80">+0.08%</td>
+</tr>
+        </tbody>
+    </table>
+</div>
+<div class="section">
+    <div class="section-title"><span class="icon">&#x1f4b1;</span> Forex</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Pair</th>
+                <th class="num">Dau Tuan</th>
+                <th class="num">Cuoi Tuan</th>
+                <th class="num">WoW</th>
+                <th class="num">Daily</th>
+            </tr>
+        </thead>
+        <tbody>
+<tr>
+    <td class="name">DXY</td>
+    <td class="num">99.82</td>
+    <td class="num">98.84</td>
+    <td class="num" style="color:#fb7185">-0.98%</td>
+    <td class="num" style="color:#fb7185">-0.06%</td>
+</tr>
+<tr>
+    <td class="name">EUR/USD</td>
+    <td class="num">1.1557</td>
+    <td class="num">1.1678</td>
+    <td class="num" style="color:#4ade80">+1.05%</td>
+    <td class="num" style="color:#fb7185">-0.08%</td>
+</tr>
+<tr>
+    <td class="name">USD/JPY</td>
+    <td class="num">157.90</td>
+    <td class="num">158.94</td>
+    <td class="num" style="color:#4ade80">+0.66%</td>
+    <td class="num" style="color:#4ade80">+0.04%</td>
+</tr>
+<tr>
+    <td class="name">GBP/USD</td>
+    <td class="num">1.3490</td>
+    <td class="num">1.3648</td>
+    <td class="num" style="color:#4ade80">+1.17%</td>
+    <td class="num" style="color:#4ade80">+0.03%</td>
+</tr>
+        </tbody>
+    </table>
+</div>
+<div class="section">
+    <div class="section-title"><span class="icon">&#x26a1;</span> Commodities</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Asset</th>
+                <th class="num">Dau Tuan</th>
+                <th class="num">Cuoi Tuan</th>
+                <th class="num">WoW</th>
+                <th class="num">Daily</th>
+            </tr>
+        </thead>
+        <tbody>
+<tr>
+    <td class="name">WTI</td>
+    <td class="num">83.20</td>
+    <td class="num">87.06</td>
+    <td class="num" style="color:#4ade80">+4.64%</td>
+    <td class="num" style="color:#fb7185">-0.88%</td>
+</tr>
+<tr>
+    <td class="name">Gold</td>
+    <td class="num">4,382.99</td>
+    <td class="num">4,680.60</td>
+    <td class="num" style="color:#4ade80">+6.79%</td>
+    <td class="num" style="color:#4ade80">+3.64%</td>
+</tr>
+<tr>
+    <td class="name">Silver</td>
+    <td class="num">64.77</td>
+    <td class="num">69.53</td>
+    <td class="num" style="color:#4ade80">+7.35%</td>
+    <td class="num" style="color:#4ade80">+2.21%</td>
+</tr>
+<tr>
+    <td class="name">Copper</td>
+    <td class="num">6.6151</td>
+    <td class="num">6.5900</td>
+    <td class="num" style="color:#fb7185">-0.38%</td>
+    <td class="num" style="color:#4ade80">+1.97%</td>
+</tr>
+<tr>
+    <td class="name">Nat Gas</td>
+    <td class="num">2.7660</td>
+    <td class="num">2.8100</td>
+    <td class="num" style="color:#4ade80">+1.59%</td>
+    <td class="num" style="color:#4ade80">+2.85%</td>
+</tr>
+        </tbody>
+    </table>
+</div>
+<div class="section">
+    <div class="section-title"><span class="icon">&#x1f4ca;</span> Bond Yields</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Treasury</th>
+                <th class="num">Dau Tuan</th>
+                <th class="num">Cuoi Tuan</th>
+                <th class="num">WoW</th>
+                <th class="num">Daily</th>
+            </tr>
+        </thead>
+        <tbody>
+<tr>
+    <td class="name">US 10Y</td>
+    <td class="num">4.699%</td>
+    <td class="num">4.738%</td>
+    <td class="num" style="color:#4ade80">+0.83%</td>
+    <td class="num" style="color:#4ade80">+0.89%</td>
+</tr>
+<tr>
+    <td class="name">US 2Y</td>
+    <td class="num">4.170%</td>
+    <td class="num">3.961%</td>
+    <td class="num" style="color:#fb7185">-5.01%</td>
+    <td class="num" style="color:#fb7185">-5.01%</td>
+</tr>
+<tr>
+    <td class="name">US 30Y</td>
+    <td class="num">5.243%</td>
+    <td class="num">5.276%</td>
+    <td class="num" style="color:#4ade80">+0.63%</td>
+    <td class="num" style="color:#4ade80">+0.74%</td>
+</tr>
+        </tbody>
+    </table>
+</div>
+<div class="section">
+    <div class="section-title"><span class="icon">&#x1f3c6;</span> Winners &amp; Losers (WoW)</div>
+    <div class="wl-grid">
+        <div class="wl-card">
+            <h3 style="color:#4ade80;">&#x1f4c8; Top Gainers</h3>
+<div class="wl-item">
+    <span class="wl-rank">1</span>
+    <span class="wl-name">Silver</span>
+    <span class="wl-val" style="color:#4ade80">&#9650; +7.35%</span>
+</div>
+<div class="wl-item">
+    <span class="wl-rank">2</span>
+    <span class="wl-name">Gold</span>
+    <span class="wl-val" style="color:#4ade80">&#9650; +6.79%</span>
+</div>
+<div class="wl-item">
+    <span class="wl-rank">3</span>
+    <span class="wl-name">WTI</span>
+    <span class="wl-val" style="color:#4ade80">&#9650; +4.64%</span>
+</div>
+<div class="wl-item">
+    <span class="wl-rank">4</span>
+    <span class="wl-name">Nat Gas</span>
+    <span class="wl-val" style="color:#4ade80">&#9650; +1.59%</span>
+</div>
+<div class="wl-item">
+    <span class="wl-rank">5</span>
+    <span class="wl-name">GBP/USD</span>
+    <span class="wl-val" style="color:#4ade80">&#9650; +1.17%</span>
+</div>
+        </div>
+        <div class="wl-card">
+            <h3 style="color:#fb7185;">&#x1f4c9; Top Losers</h3>
+<div class="wl-item">
+    <span class="wl-rank">1</span>
+    <span class="wl-name">Shanghai</span>
+    <span class="wl-val" style="color:#fb7185">&#9660; -1.55%</span>
+</div>
+<div class="wl-item">
+    <span class="wl-rank">2</span>
+    <span class="wl-name">Nasdaq</span>
+    <span class="wl-val" style="color:#fb7185">&#9660; -1.60%</span>
+</div>
+<div class="wl-item">
+    <span class="wl-rank">3</span>
+    <span class="wl-name">VIX</span>
+    <span class="wl-val" style="color:#fb7185">&#9660; -2.13%</span>
+</div>
+<div class="wl-item">
+    <span class="wl-rank">4</span>
+    <span class="wl-name">CAC 40</span>
+    <span class="wl-val" style="color:#fb7185">&#9660; -2.77%</span>
+</div>
+<div class="wl-item">
+    <span class="wl-rank">5</span>
+    <span class="wl-name">US 2Y</span>
+    <span class="wl-val" style="color:#fb7185">&#9660; -5.01%</span>
+</div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="section-title"><span class="icon">&#x1f4c5;</span> Weekly Timeline</div>
+    <div class="timeline">
+        <div class="tl-item"><span class="tl-day">MON 17/08</span>Asian markets open lower after US debt crosses $40T; gold continues rally</div>
+        <div class="tl-item"><span class="tl-day">TUE 18/08</span>European indices slip as CAC 40 leads losses; oil holds above $87</div>
+        <div class="tl-item"><span class="tl-day">WED 19/08</span>Trump criticizes Fed rate policy; markets await Fed minutes; crypto bounces</div>
+        <div class="tl-item"><span class="tl-day">THU 20/08</span>Bitcoin surges past $72.5K on Iran tensions; Fed minutes show divided views; US 2Y yield drops 5% WoW</div>
+        <div class="tl-item"><span class="tl-day">FRI 21/08</span>Wall Street recovers; Dow +0.98%; gold hits $4,680; silver +2.2%</div>
+    </div>
+</div>
+<div class="section">
+    <div class="section-title"><span class="icon">&#x1f525;</span> Hot News This Week</div>
+    <div class="news-list">
+    <div class="news-item">
+        <div class="news-day">THU 20/08</div>
+        <div class="news-title"><a href="https://cointelegraph.com/markets/bitcoin-breaks-200-day-moving-average" target="_blank" style="color:inherit;text-decoration:none;">BTC breaks above 200-day moving average for first time since November</a></div>
+        <div class="news-source">CoinTelegraph</div>
+    </div>
+    <div class="news-item">
+        <div class="news-day">THU 20/08</div>
+        <div class="news-title"><a href="https://cointelegraph.com/markets/bitcoin-surges-after-us-debt-crosses-40t" target="_blank" style="color:inherit;text-decoration:none;">US national debt tops $40 trillion, stoking debate on Bitcoin implications</a></div>
+        <div class="news-source">CoinTelegraph</div>
+    </div>
+    <div class="news-item">
+        <div class="news-day">THU 20/08</div>
+        <div class="news-title"><a href="https://cointelegraph.com/news/cftc-chair-crypto-regulation-without-clarity-act-congress" target="_blank" style="color:inherit;text-decoration:none;">CFTC chair says agency will move on crypto regulation if CLARITY Act fails</a></div>
+        <div class="news-source">CoinTelegraph</div>
+    </div>
+    <div class="news-item">
+        <div class="news-day">THU 20/08</div>
+        <div class="news-title"><a href="https://cointelegraph.com/news/binance-opens-crypto-trading-to-ai-agents-with-user-set-controls" target="_blank" style="color:inherit;text-decoration:none;">Binance opens crypto trading to AI agents with user-set controls</a></div>
+        <div class="news-source">CoinTelegraph</div>
+    </div>
+    <div class="news-item">
+        <div class="news-day">THU 20/08</div>
+        <div class="news-title"><a href="https://cointelegraph.com/markets/bitcoin-price-reaches-725k-as-us-issues-economic-d-day-threat-to-iran" target="_blank" style="color:inherit;text-decoration:none;">Bitcoin price reaches $72.5K as US issues 'Economic D-Day' threat to Iran</a></div>
+        <div class="news-source">CoinTelegraph</div>
+    </div>
+    <div class="news-item">
+        <div class="news-day">WED 19/08</div>
+        <div class="news-title"><a href="https://www.cnbc.com/2026/08/19/trump-bemoans-fed-rate-policy.html" target="_blank" style="color:inherit;text-decoration:none;">Trump bemoans Fed interest rate policy, says U.S. should be paying much less</a></div>
+        <div class="news-source">CNBC</div>
+    </div>
+    <div class="news-item">
+        <div class="news-day">WED 19/08</div>
+        <div class="news-title"><a href="https://www.marketplace.org/2026/08/19/fed-minutes-preview/" target="_blank" style="color:inherit;text-decoration:none;">What to watch for in the next Fed minutes</a></div>
+        <div class="news-source">Marketplace</div>
+    </div>
+    <div class="news-item">
+        <div class="news-day">THU 20/08</div>
+        <div class="news-title"><a href="https://cointelegraph.com/news/bitcoin-miners-ai-hpc-capex-revenue-2026" target="_blank" style="color:inherit;text-decoration:none;">Bitcoin miners pour billions into AI as capex outpaces revenue 15-to-1</a></div>
+        <div class="news-source">CoinTelegraph</div>
+    </div>
+    <div class="news-item">
+        <div class="news-day">THU 20/08</div>
+        <div class="news-title"><a href="https://cointelegraph.com/magazine/mica-cracks-down-on-usdt-in-europe-but-global-demand-remains-high" target="_blank" style="color:inherit;text-decoration:none;">MiCA cracks down on USDT in Europe... but global demand remains high</a></div>
+        <div class="news-source">CoinTelegraph</div>
+    </div>
+    <div class="news-item">
+        <div class="news-day">THU 20/08</div>
+        <div class="news-title"><a  style="color:inherit;text-decoration:none;">Gold surges past $4,600 as safe-haven demand accelerates amid geopolitical tensions</a></div>
+        <div class="news-source">Market Data</div>
+    </div>
+    </div>
+</div>
+<div class="section">
+    <div class="section-title"><span class="icon">&#x1f52e;</span> Outlook &#8211; Tuan Toi</div>
+    <div style="background:#12121e;border-radius:14px;padding:18px;border:1px solid #1e1e30;font-size:13px;line-height:1.8;">
+        <p>&#x2022; <strong>Fed Minutes:</strong> The FOMC minutes from the July meeting showed policymakers divided on the pace of rate cuts. Market expects a 25bp cut in September, but ongoing geopolitical risks from the Iran situation could delay easing.</p>
+        <p>&#x2022; <strong>Gold Momentum:</strong> Gold surged 6.79% WoW to $4,680, its strongest weekly performance in months. Safe-haven demand driven by US-Iran tensions and $40T debt milestone. The rally may slow but momentum remains bullish above $4,500.</p>
+        <p>&#x2022; <strong>US Yields:</strong> The yield curve steepened as the 2Y yield dropped 5% WoW while the 10Y yield rose. This typically signals recession fears in the near term but growth expectations longer term. Watch the 2Y-10Y spread.</p>
+        <p>&#x2022; <strong>Bitcoin &amp; Crypto:</strong> BTC broke above its 200-day MA for the first time since November, reaching $72.5K mid-week before pulling back to $77K (up from the week's low). Crypto regulation progress (CFTC, MiCA) and the Binance AI trading launch are bullish signals for adoption.</p>
+        <p>&#x2022; <strong>Geopolitical Risk:</strong> The US 'Economic D-Day' threat to Iran and escalating tensions remain the biggest wild card. Any escalation could trigger a risk-off move, benefiting gold and the dollar but pressuring equities.</p>
+        <p style="margin-top:8px;color:#8888aa;font-style:italic;">Tuyen bo mien tru: Phan tich tren khong phai la loi khuyen dau tu. [UOC TINH]</p>
+    </div>
+</div>
+<div class="footer">
+    <strong>No Ti</strong> &bull; Weekly Recap &bull; Chu Nhat hang tuan<br>
+    Du lieu tu Yahoo Finance &amp; Binance API<br>
+    <span style="font-size:10px;">fp:236fd4</span>
+</div>
+
+</div>
+</body>
+</html>
